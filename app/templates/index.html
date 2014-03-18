@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Rue Godecharle, 1050 Bruxelles, excés de vitesse</h1>
+<p>Les photos suivant étaient été pris sur la route Rue Godecharle pour aider dans la pétition pour un contrôle de vitesse.</p>
+{% for folder, photos in folders.iteritems() %}
+    <h2>{{folder}}</h2>
+    {% for photo in photos %}
+    <div class="photo">
+        <a href="{{photo['url']}}" target="_new">
+            <img src="{{photo['url']}}" alt="{{photo['name']}}" width="100" height="100" />
+            <p>{{photo['speed']}}</p>
+        </a>
+    </div>
+    {% endfor %}
+    <br style="clear: both" />
+{% endfor %}
+{% endblock %}
+
+{% block end %}
+<a href="/all" class="all">Voir Tout / See All</a>
+{% endblock %}
