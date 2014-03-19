@@ -1,0 +1,74 @@
+/* generic */
+@font-face
+{
+	font-family: avantGardeGothic;
+	src: url(/static/fonts/itc-avant-garde-gothic.ttf);
+}
+
+@font-face
+{
+	font-family: avantGardeGothicBold;
+	src: url(/static/fonts/itc-avant-garde-gothic-bold.ttf);
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #fed30d;
+	font-family: avantGardeGothic;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: avantGardeGothicBold;
+}
+
+a:hover {
+	background-color: #FFDE49;
+	text-decoration: none;
+}
+
+/* base */
+header div {
+	display: flex;
+	padding: 0px 5px;
+}
+
+header div a {
+	padding: 0px 5px;
+}
+
+header #back a {
+	margin-top: -2px;
+}
+
+header #title {
+
+}
+
+header #slogan a {
+	padding-top: 8px;
+}
+
+
+ul.flashes {
+	padding: 0px;
+}
+
+ul.flashes li {
+	background-color: #ccc;
+}
+
+/* pages */
+#youtube iframe {
+	margin: 0px auto;
+	display: block;
+}
+
+div#links a {
+	display: block;
+	padding: 20px;
+	margin: 15px;
+	text-align: center;
+	background-color: #333;
+	font-size: 24px;
+}
