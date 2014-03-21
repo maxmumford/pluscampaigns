@@ -21,52 +21,47 @@
 	    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
   	</head>
-  	<body>
+  	<body{% if title == 'Home' %} class="home"{% endif %}>
 		<header>
-			<nav class="navbar">
-				<div class="container">
-					<div id="back">
-						<a href="/" title="Home Page">
-							<h1>&lt;</h1>
-						</a>
+			<div class="container">
+				<div class="row">
+					<div id="title-slogan" class="col-md-6">
+						<p><a id="title" href="/" title="Home Page">Happy Voting</a></p>
+						<p><a id="slogan" href="https://twitter.com/search?q=%23HappyVoting" target="_new">#VoteInMay</a></p>
 					</div>
-					<div id="title">
-						<h1>Happy Voting</h1>
-					</div>
-					<div id="slogan">
-						<a href="https://twitter.com/search?q=%23HappyVoting" target="_new">
-							<h3>#VoteInMay</h3>
-						</a>
-					</div>
-					<br style="clear: both" />
+					<nav id="navigation" class="col-md-6">
+						<a href="/about" title="Home Page">Young Voters</a> | <a href="/media">Media</a>
+					</nav>
 				</div>
-			</nav>
+			</div>
 		</header>
-		<main class="container">
-			{% with flashes = get_flashed_messages() %}
-			  	{% if flashes %}
-					<ul class="flashes">
-					{% for flash in flashes %}
-				  		<li>{{ flash }}</li>
-					{% endfor %}
-					</ul>
-			  		{% endif %}
-				{% endwith %}
-			{% block content %}{% endblock %}
-		</main>
+		<div id='container-parent'>
+			<main class="container">
+				{% with flashes = get_flashed_messages() %}
+			  		{% if flashes %}
+						<ul class="flashes">
+						{% for flash in flashes %}
+					  		<li>{{ flash }}</li>
+						{% endfor %}
+						</ul>
+			  			{% endif %}
+					{% endwith %}
+				{% block content %}{% endblock %}
+			</main>
+		</div>
 		<footer class="container">
-			<div id="links" class="row">
-				<div class="col-md-3">
-					<a href="/about">YOUNG VOTERS</a>
+			<div class="row">
+				<div class="col-md-3 share">
+					<img src="/static/images/base/facebook.png" />
 				</div>
-				<div class="col-md-3">
-					<a href="/media">MEDIA</a>
+				<div class="col-md-3 share">
+					<img src="/static/images/base/google-plus.png" />
 				</div>
-				<div class="col-md-3">
-					<a href="/donate">DONATE</a>
+				<div class="col-md-3 share">
+					<img src="/static/images/base/pinterest.png" />
 				</div>
-				<div class="col-md-3">
-					<a href="/share">SHARE</a>
+				<div class="col-md-3 share">
+					<img src="/static/images/base/twitter.png" />
 				</div>
 			</div>
 		</footer>

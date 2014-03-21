@@ -14,8 +14,18 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background-color: #fed30d;
+	background-color: #f5f5f5;
 	font-family: avantGardeGothic;
+	font-size: 16px;
+}
+
+body.home {
+	background-color: #fed30d;
+}
+
+header {
+	background-color: #fed30d;
+	padding-bottom: 40px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -27,28 +37,41 @@ a:hover {
 	text-decoration: none;
 }
 
+body.home footer.container {
+	margin-top: -110px;
+}
+
+
 /* base */
-header div {
-	display: flex;
-	padding: 0px 5px;
+#title-slogan, #navigation {
+	text-align: center;
 }
 
-header div a {
-	padding: 0px 5px;
+#title-slogan a, #navigation a {
+	padding: 10px;
+	color: #333;
+	font-family: avantGardeGothicBold;
 }
 
-header #back a {
-	margin-top: -2px;
+#title-slogan {
+	padding-top: 40px;
 }
 
-header #title {
-
+#navigation {
+	padding-top: 59px;
 }
 
-header #slogan a {
-	padding-top: 8px;
+#title {
+	font-size: 48px;
 }
 
+#slogan {
+	font-size: 21px;
+}
+
+#navigation {
+	font-size: 24px;
+}
 
 ul.flashes {
 	padding: 0px;
@@ -58,17 +81,10 @@ ul.flashes li {
 	background-color: #ccc;
 }
 
-/* pages */
-#youtube iframe {
-	margin: 0px auto;
-	display: block;
+.share {
+	max-width: 300px;
+	text-align: center;
+	margin: 20px 0px;
 }
 
-div#links a {
-	display: block;
-	padding: 20px;
-	margin: 15px;
-	text-align: center;
-	background-color: #333;
-	font-size: 24px;
-}
+/* pages */
