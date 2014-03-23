@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>HappyVoting | {{title}}</title>
+
+		<!-- css imports -->
+		<link type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="/static/css/site.css" />
+		<link type="text/css" rel="stylesheet" href="/static/css/flex-video.css" />
+
+		<!-- js imports -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/static/js/base.js"></script>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+	    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+  	</head>
+  	<body{% if title == 'Home' %} class="home"{% endif %}>
+
+		<header>
+			<div class="container">
+				<div class="row">
+
+					<div id="like-follow" class="col-md-4">
+						<div class="row">
+							<div id="like" class="col-md-6">
+								<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
+							</div>
+							<div id="follow" class="col-md-6">
+								<a href="https://twitter.com/twitterapi" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a>
+								<script>
+									!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+								</script>
+							</div>
+						</div>
+					</div>
+
+					<div id="title-slogan" class="col-md-4">
+						<p><a id="title" href="/" title="Home Page">Happy Voting</a></p>
+						<p><a id="slogan" href="https://twitter.com/search?q=%23HappyVoting" target="_new">#VoteInMay</a></p>
+					</div>
+
+					<div id="share" class="col-md-4">
+						<table>
+							<tr>
+								<td><a href="#"><img src="/static/images/base/share/icons/facebook.png" /></a></td>
+								<td><a href="#"><img src="/static/images/base/share/icons/twitter.png" /></a></td>
+								<td><a href="#"><img src="/static/images/base/share/icons/google-plus.png" /></a></td>
+								<td><a href="#"><img src="/static/images/base/share/icons/pinterest.png" /></a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li {{ menu_active('campaign') | safe }}><a href="/campaign">Your Campaign</a></li>
+							<li {{ menu_active('about') | safe }}><a href="/about">Young Voters</a></li>
+							<li {{ menu_active('media') | safe }}><a href="/media">Media</a></li>
+							<li {{ menu_active('take-action') | safe }}><a href="/take-action">Take Action</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</header>
+
+		<main class="container">
+			{% with flashes = get_flashed_messages() %}
+		  		{% if flashes %}
+					<ul class="flashes">
+					{% for flash in flashes %}
+				  		<li>{{ flash }}</li>
+					{% endfor %}
+					</ul>
+		  			{% endif %}
+				{% endwith %}
+			{% block content %}{% endblock %}
+		</main>
+
+		<footer class="container">
+			<div class="row" id="icons">
+				<div class="col-md-3 share">
+					<a href=""><img src="/static/images/base/facebook.png" /></a>
+				</div>
+				<div class="col-md-3 share">
+					<a href=""><img src="/static/images/base/google-plus.png" /></a>
+				</div>
+				<div class="col-md-3 share">
+					<a href=""><img src="/static/images/base/pinterest.png" /></a>
+				</div>
+				<div class="col-md-3 share">
+					<a href=""><img src="/static/images/base/twitter.png" /></a>
+				</div>
+			</div>
+			<div class="row" id="hash-tags">
+				<div class="col-md-2 col-md-offset-1"><a href="https://twitter.com/search?q=%23EvensFoundation" target="_blank">#EvensFoundation</a></div>
+				<div class="col-md-2"><a href="https://twitter.com/search?q=%23VoteInMay" target="_blank">#VoteInMay</a></div>
+				<div class="col-md-2"><a href="https://twitter.com/search?q=%23EP2014" target="_blank">#EP2014</a></div>
+				<div class="col-md-2"><a href="https://twitter.com/search?q=%23HappyVoting" target="_blank">#HappyVoting</a></div>
+				<div class="col-md-2"><a href="https://twitter.com/search?q=%23YoungVoters" target="_blank">#YoungVoters</a></div>
+			</div>
+			<div class="row" id="web-dev-by">
+				<div class="col-md-12">Web Development by <a href="http://maxmakedesign.co.uk" target="_blank">MaxMakeDesign</a></div>
+			</div>
+		</footer>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-49133771-1', 'happyvoting.eu');
+			ga('send', 'pageview');
+		</script>
+
+  	</body>
+</html>

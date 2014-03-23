@@ -11,3 +11,4 @@ app.config.update(
 
 # import custom python files
 from app import views
+from app import jinja_functions

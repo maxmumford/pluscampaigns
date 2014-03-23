@@ -14,18 +14,21 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background-color: #f5f5f5;
+	background-color: #f5f5f5; /* grey */
 	font-family: avantGardeGothic;
 	font-size: 16px;
 }
 
 body.home {
-	background-color: #fed30d;
+	background-color: #fed30d; /* yellow */
+}
+
+body.home header {
+	margin-bottom: 40px;
 }
 
 header {
 	background-color: #fed30d;
-	padding-bottom: 40px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -33,8 +36,9 @@ h1, h2, h3, h4, h5 {
 }
 
 a:hover {
-	background-color: #FFDE49;
+	background-color: #FFDE49; /* light yellow */
 	text-decoration: none;
+	transition: background-color 0.5s;
 }
 
 body.home footer.container {
@@ -43,34 +47,68 @@ body.home footer.container {
 
 
 /* base */
-#title-slogan, #navigation {
-	text-align: center;
+header {
+	padding-top: 10px;
 }
 
-#title-slogan a, #navigation a {
+header #title-slogan {
+	text-align: center;
+	margin-bottom: 10px
+}
+
+header #title-slogan a {
 	padding: 10px;
-	color: #333;
+	color: #333; /* dark grey */
 	font-family: avantGardeGothicBold;
 }
 
-#title-slogan {
-	padding-top: 40px;
+header #title-slogan #title {
+	margin-top: 20px;
+	font-size: 52px;
 }
 
-#navigation {
-	padding-top: 59px;
+header #title-slogan #slogan {
+	font-size: 28px;
 }
 
-#title {
-	font-size: 48px;
+header #like-follow {
+	margin-top: 22px;
 }
 
-#slogan {
-	font-size: 21px;
+header #share table {
+	margin-top: 18px;
+	width: 162px;
 }
 
-#navigation {
-	font-size: 24px;
+header #share table td {
+	padding: 5px;
+}
+
+
+.navbar .nav, .navbar .nav > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    *zoom:1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+}
+
+.navbar {
+    text-align:center;
+    margin-bottom: 0px !important;
+}
+
+.navbar .brand.hidden-desktop{
+    float:none;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	transition: color 0.5s;
+	color: #fed30d;
 }
 
 ul.flashes {
@@ -87,4 +125,56 @@ ul.flashes li {
 	margin: 20px 0px;
 }
 
+footer {
+	margin-top: 20px;
+}
+
+footer #icons {
+	height: 119px;
+}
+
+footer #hash-tags {
+	text-align: center;
+	font-family: avantGardeGothicBold;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+footer #hash-tags a {
+	color: #333;
+}
+
+#web-dev-by {
+	text-align: center;
+	margin: 30px 0px 30px 0px;
+	opacity: .50;
+}
+
+#web-dev-by:hover {
+	opacity: 1;
+	transition: opacity .5s;
+}
+
+/* text-half */
+#text-half img {
+	float: left;
+	max-width: 600px;
+	width: 100%;
+	padding: 0px 30px 0px 0px;
+}
+
+#text-full img {
+	max-width: 100%;
+	margin: 20px 0px;
+}
 /* pages */
+
+img#donate {
+	margin: 0px auto;
+	display: block;
+	margin-top: 50px;
+}
+
+table.media td {
+	padding: 0px 5px;
+}

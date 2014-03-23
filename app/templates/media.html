@@ -1,28 +1,41 @@
-{% extends "base.html" %}
-{% block content %}
-<h2>Media Resources</h2>
-<p>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque magna diam, sagittis in ipsum ornare, pretium auctor augue. Duis in turpis feugiat, cursus odio eget, egestas eros. Mauris nulla dolor, dictum non risus id, ultricies condimentum nibh. Quisque ac varius velit. Nullam quis tincidunt diam, sodales condimentum leo. Suspendisse potenti. Pellentesque facilisis fermentum nulla, quis aliquet odio. Sed scelerisque vehicula tempus. Duis fringilla nisi id aliquam sollicitudin.
-</p>
-<h3>PDFs</h3>
-<ul>
-	<li>File name number 1 <a href="">[DOWNLOAD]</a></li>
-	<li>File name number 2 <a href="">[DOWNLOAD]</a></li>
-	<li>File name number 3 <a href="">[DOWNLOAD]</a></li>
-	<li>File name number 4 <a href="">[DOWNLOAD]</a></li>
-</ul>
-<h3>Videos</h3>
-<ul>
-	<li>Video number 1 <a href="">[DOWNLOAD]</a></li>
-	<li>Video number 2 <a href="">[DOWNLOAD]</a></li>
-	<li>Video number 3 <a href="">[DOWNLOAD]</a></li>
-	<li>Video number 4 <a href="">[DOWNLOAD]</a></li>
-</ul>
-<h3>Images</h3>
-<ul>
-	<li>Image number 1 <a href="">[DOWNLOAD]</a></li>
-	<li>Image number 2 <a href="">[DOWNLOAD]</a></li>
-	<li>Image number 3 <a href="">[DOWNLOAD]</a></li>
-	<li>Image number 4 <a href="">[DOWNLOAD]</a></li>
-</ul>
+{% extends "layouts/text-half.html" %}
+
+{% block content_text %}
+	<p>
+		Happy Voting is based on the need for more voter participation in the upcoming European Elections on May 20-25. There are two different ways to approach this issue: one is through increased education and informative projects that explain the European Elections and make sure that young people are involved in the decision making process. 
+	</p>
+	<p>
+		The second approach is that young people are informed about the basic minimum when it comes to the European Parliamentary Elections. That means simply knowing that the elections exist, as well as the month in which they are held. It also means raising awareness and rendering them more attractive to young people and tailoring the message to their entertainment expectations. 
+	</p>
+	<p>
+		That’s why Happy Voting plays an important role online. Instead of educating and informing about the political choices, we start from the bottom and try to portray the elections differently. The reason for choosing the entertainment industry as a point of reference for this campaign was precisely to ensure that – at the very least – young people are attracted to the idea of voting. The next step is of course providing further and better educational tools to understand the choices available to young people.
+	</p>
+	<h2>Lets try to make voting and democracy more inclusive and fun!</h2>
+	<p>
+		For journalists and media outlets wishing to cover the campaign, please find all the available resources and media information attached below, including info and campaign PDFs, HD video material and promotional images. For journalists that wish to interview Members of the European Parliament and volunteers who danced in the video, we would be happy to assist you with your media inquiries and interview requests. 
+	</p>
+	<p>
+		For public and private broadcasters wishing to cover the campaign, we have over one hundred HD quality rushes, including behind the scenes audio-visual material and interviews with parliamentarians, volunteers, a nudist, youths and the leading candidate of the European Greens, Ska Keller.
+	</p>
+	<p>
+		For further information and audio-visual material, contact us at <a href="mailto:media@happyvoting.eu">media@happyvoting.eu</a>
+	</p>
 {% endblock %}
+
+{% block content_text_after %}
+	<h2>Downloads</h2>
+	<table class="media">
+		<tr>
+			<td>&#8226;</td>
+			<td>Happy Voting video rushes</td>
+			<td>[1gb]</td>
+			<td><a href="http://elasticbeanstalk-eu-west-1-021357490719.s3.amazonaws.com/media/happyvoting-media-rushes.zip">[DOWNLOAD]</a></td>
+		</tr>
+		<tr>
+			<td>&#8226;</td>
+			<td>Logos for Happy Voting and affiliated organistions</td>
+			<td>[164mb]</td>
+			<td><a href="http://elasticbeanstalk-eu-west-1-021357490719.s3.amazonaws.com/media/happyvoting-photos-logos.zip">[DOWNLOAD]</a></td>
+		</tr>
+	</table>
+	{% endblock %}

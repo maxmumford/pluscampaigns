@@ -1,0 +1,9 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<h1>{{heading}}</h1>
+<div id="text-half">
+	<img src="/static/images/text/banners/{{image_source}}.jpg" />
+	{% block content_text %}{% endblock %}
+</div>
+{% block content_text_after %}{% endblock %}
+{% endblock %}
