@@ -244,6 +244,10 @@ footer #hash-tags a {
 }
 /* pages */
 
+#youtube img {
+	width: 100%;
+}
+
 img#donate {
 	margin: 0px auto;
 	display: block;
