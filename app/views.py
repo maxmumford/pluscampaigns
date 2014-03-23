@@ -5,6 +5,10 @@ from app import app
 def index():
     return render_template('home.html', title="Home")
 
+@app.route('/making-of')
+def making_of():
+    return render_template('making-of.html', title="The Making Of", heading="The Making Of Happy Voting", image_source="3")
+
 @app.route('/campaign')
 def campaign():
     return render_template('campaign.html', title="Your Campaign", heading="Your Campaign", image_source="6")

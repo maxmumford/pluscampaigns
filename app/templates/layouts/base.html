@@ -24,7 +24,7 @@
 
   	</head>
 
-  	<body{% if title == 'Home' %} class="home"{% endif %}>
+  	<body{% if title in ['Home', 'The Making Of'] %} class="home"{% endif %}>
 
 		<header>
 			<div class="container">
@@ -76,6 +76,7 @@
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
+							<li {{ menu_active('making-of') | safe }}><a href="/making-of">The Making Of</a></li>
 							<li {{ menu_active('campaign') | safe }}><a href="/campaign">Your Campaign</a></li>
 							<li {{ menu_active('about') | safe }}><a href="/about">Young Voters</a></li>
 							<li {{ menu_active('take-action') | safe }}><a href="/take-action">Take Action</a></li>
