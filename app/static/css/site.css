@@ -73,7 +73,7 @@ header #title-slogan a {
 
 @media(max-width:767px){
 	header #title-slogan #title {
-		font-size: 35px;
+		font-size: 45px;
 	}
 	header #title-slogan #slogan {
 		font-size: 20px;
@@ -82,7 +82,7 @@ header #title-slogan a {
 
 @media(max-width:1200px) and (min-width: 767px){
 	header #title-slogan #title {
-		font-size: 48px;
+		font-size: 68px;
 	}	
 	header #title-slogan #slogan {
 		font-size: 22px;
@@ -92,10 +92,10 @@ header #title-slogan a {
 @media(min-width:1200px){
 	header #title-slogan #title {
 		margin-top: 20px;
-		font-size: 52px;
+		font-size: 82px;
 	}
 	header #title-slogan #slogan {
-		font-size: 24px;
+		font-size: 34px;
 	}
 }
 
@@ -121,7 +121,7 @@ header #like-follow {
 
 
 header #like-follow table {
-	margin-top: 29px;
+	margin-top: 49px;
 	width: 100px;
 }
 
@@ -134,7 +134,7 @@ header #like-follow table iframe {
 }
 
 header #share table {
-	margin-top: 18px;
+	margin-top: 46px;
 	width: 162px;
 }
 
@@ -231,16 +231,9 @@ footer #hash-tags a {
 }
 
 /* text-half */
-#text-half img {
-	float: left;
-	max-width: 600px;
-	width: 100%;
-	padding: 0px 30px 0px 0px;
-}
-
-#text-full img {
+#text-full img#banner {
 	max-width: 100%;
-	margin: 20px 0px;
+	margin: 30px 0px;
 }
 /* pages */
 
