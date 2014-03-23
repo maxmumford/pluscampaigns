@@ -1,3 +1,12 @@
+/* USEFUL
+
+@media(max-width:767px){}
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}
+
+*/ 
+
 /* generic */
 @font-face
 {
@@ -62,17 +71,66 @@ header #title-slogan a {
 	font-family: avantGardeGothicBold;
 }
 
-header #title-slogan #title {
-	margin-top: 20px;
-	font-size: 52px;
+@media(max-width:767px){
+	header #title-slogan #title {
+		font-size: 35px;
+	}
+	header #title-slogan #slogan {
+		font-size: 20px;
+	}
 }
 
-header #title-slogan #slogan {
-	font-size: 28px;
+@media(max-width:1200px) and (min-width: 767px){
+	header #title-slogan #title {
+		font-size: 48px;
+	}	
+	header #title-slogan #slogan {
+		font-size: 22px;
+	}
+}
+
+@media(min-width:1200px){
+	header #title-slogan #title {
+		margin-top: 20px;
+		font-size: 52px;
+	}
+	header #title-slogan #slogan {
+		font-size: 24px;
+	}
 }
 
 header #like-follow {
-	margin-top: 22px;
+	min-height: 30px;
+}
+
+@media(min-width:992px){
+	header #like-follow table {
+		float: right;
+	}
+}
+
+@media(max-width:992px){
+	header #like-follow table {
+		margin: 0px auto;
+	}
+
+	header #share table {
+		margin: 0px auto;
+	}
+}
+
+
+header #like-follow table {
+	margin-top: 29px;
+	width: 100px;
+}
+
+header #like-follow #follow {
+	vertical-align: top;
+}
+
+header #like-follow table iframe {
+	width: 70px;
 }
 
 header #share table {
@@ -119,18 +177,35 @@ ul.flashes li {
 	background-color: #ccc;
 }
 
-.share {
+body .footer-icons-home {
+	display: none;
+}
+
+body.home .footer-icons-home{
+	display: block;
+	height: 112px;
+}
+
+footer .share {
 	max-width: 300px;
 	text-align: center;
 	margin: 20px 0px;
 }
 
-footer {
-	margin-top: 20px;
+@media(max-width:992px){
+	footer .share img {
+		max-width: 179px;
+	}
 }
 
-footer #icons {
-	height: 119px;
+@media(max-width: 768px){
+	footer .share img {
+		max-width: 100%;
+	}
+}
+
+footer {
+	margin-top: 20px;
 }
 
 footer #hash-tags {
@@ -147,7 +222,7 @@ footer #hash-tags a {
 #web-dev-by {
 	text-align: center;
 	margin: 30px 0px 30px 0px;
-	opacity: .50;
+	opacity: .80;
 }
 
 #web-dev-by:hover {

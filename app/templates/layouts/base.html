@@ -15,7 +15,6 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 		<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="/static/js/base.js"></script>
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,6 +22,13 @@
 	    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+
+		{% if 'white' in request.args %}
+		<style>
+			body.home {background-color: #f5f5f5;}
+		</style>
+		{% endif %}
+
   	</head>
   	<body{% if title == 'Home' %} class="home"{% endif %}>
 
@@ -31,17 +37,19 @@
 				<div class="row">
 
 					<div id="like-follow" class="col-md-4">
-						<div class="row">
-							<div id="like" class="col-md-6">
-								<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
-							</div>
-							<div id="follow" class="col-md-6">
-								<a href="https://twitter.com/twitterapi" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a>
-								<script>
-									!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-								</script>
-							</div>
-						</div>
+						<table>
+							<tr>
+								<td id="like">
+									<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
+								</td>
+								<td id="follow">
+									<a href="https://twitter.com/twitterapi" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @twitterapi</a>
+									<script>
+										!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+									</script>
+								</td>
+							</tr>
+						</table>
 					</div>
 
 					<div id="title-slogan" class="col-md-4">
@@ -76,8 +84,8 @@
 						<ul class="nav navbar-nav">
 							<li {{ menu_active('campaign') | safe }}><a href="/campaign">Your Campaign</a></li>
 							<li {{ menu_active('about') | safe }}><a href="/about">Young Voters</a></li>
-							<li {{ menu_active('media') | safe }}><a href="/media">Media</a></li>
 							<li {{ menu_active('take-action') | safe }}><a href="/take-action">Take Action</a></li>
+							<li {{ menu_active('media') | safe }}><a href="/media">Media</a></li>
 						</ul>
 					</div>
 				</div>
@@ -98,27 +106,33 @@
 			{% block content %}{% endblock %}
 		</main>
 
+		<div class="visible-xs visible-sm footer-icons-home"></div>
+
 		<footer class="container">
 			<div class="row" id="icons">
-				<div class="col-md-3 share">
+				<div class="col-md-3 col-sm-3 col-xs-6 share">
 					<a href=""><img src="/static/images/base/facebook.png" /></a>
 				</div>
-				<div class="col-md-3 share">
+				<div class="col-md-3 col-sm-3 col-xs-6 share">
 					<a href=""><img src="/static/images/base/google-plus.png" /></a>
 				</div>
-				<div class="col-md-3 share">
+				<div class="clearfix visible-xs"></div>
+				<div class="col-md-3 col-sm-3 col-xs-6 share">
 					<a href=""><img src="/static/images/base/pinterest.png" /></a>
 				</div>
-				<div class="col-md-3 share">
+				<div class="col-md-3 col-sm-3 col-xs-6 share">
 					<a href=""><img src="/static/images/base/twitter.png" /></a>
 				</div>
 			</div>
+			<br style="clear: both" />
 			<div class="row" id="hash-tags">
-				<div class="col-md-2 col-md-offset-1"><a href="https://twitter.com/search?q=%23EvensFoundation" target="_blank">#EvensFoundation</a></div>
-				<div class="col-md-2"><a href="https://twitter.com/search?q=%23VoteInMay" target="_blank">#VoteInMay</a></div>
-				<div class="col-md-2"><a href="https://twitter.com/search?q=%23EP2014" target="_blank">#EP2014</a></div>
-				<div class="col-md-2"><a href="https://twitter.com/search?q=%23HappyVoting" target="_blank">#HappyVoting</a></div>
-				<div class="col-md-2"><a href="https://twitter.com/search?q=%23YoungVoters" target="_blank">#YoungVoters</a></div>
+				<div class="col-md-2 col-sm-2 col-xs-4 col-md-offset-1 col-sm-offset-1">
+					<a href="https://twitter.com/search?q=%23EvensFoundation" target="_blank">#EvensFoundation</a>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-4"><a href="https://twitter.com/search?q=%23VoteInMay" target="_blank">#VoteInMay</a></div>
+				<div class="col-md-2 col-sm-2 col-xs-4"><a href="https://twitter.com/search?q=%23EP2014" target="_blank">#EP2014</a></div>
+				<div class="col-md-2 col-sm-2 col-xs-4"><a href="https://twitter.com/search?q=%23HappyVoting" target="_blank">#HappyVoting</a></div>
+				<div class="col-md-2 col-sm-2 col-xs-4"><a href="https://twitter.com/search?q=%23YoungVoters" target="_blank">#YoungVoters</a></div>
 			</div>
 			<div class="row" id="web-dev-by">
 				<div class="col-md-12">Web Development by <a href="http://maxmakedesign.co.uk" target="_blank">MaxMakeDesign</a></div>
