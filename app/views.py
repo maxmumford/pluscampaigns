@@ -1,4 +1,4 @@
-from flask import render_template, flash, url_for
+from flask import render_template, url_for, redirect
 from app import app
 
 @app.route('/')
@@ -24,3 +24,11 @@ def share():
 @app.route('/media')
 def media():
     return render_template('media.html', title="Media", heading="Media Resources", image_source="1")
+
+@app.route('/donation-thanks')
+def donation_thanks():
+	return render_template('donation-thanks.html', title="Donation", heading="Thanks for your donation!", image_source="4")
+
+@app.route('/donation-cancel')
+def donation_cancel():
+	return redirect(url_for('share'))
