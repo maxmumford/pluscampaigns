@@ -167,6 +167,12 @@ header #share table td {
 	color: #fed30d;
 }
 
+.navbar .separator {
+	cursor: default;
+	color: white;
+	padding: 14px;
+}
+
 ul.flashes {
 	padding: 0px;
 }
@@ -247,4 +253,29 @@ img#donate {
 
 table.media td {
 	padding: 0px 5px;
+}
+
+.tumblr a.photo-link {
+	display: block;
+}
+
+.tumblr a.photo-link:hover {
+	background-color: white;
+}
+
+.tumblr a.photo-link img {
+	display: block;
+	margin: 0px auto 30px auto;
+}
+
+.tumblr div.post {
+	border: solid 1px #ccc;
+	background-color: white;
+	padding: 30px;
+	margin-bottom: 20px;
+}
+
+.tumblr div.post iframe {
+	display: block;
+	margin: 0px auto;
 }

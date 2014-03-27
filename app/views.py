@@ -26,6 +26,10 @@ def share():
 def media():
     return render_template('media.html', title="Media", heading="Media Resources", image_source="1")
 
+@app.route('/blog')
+def blog():
+    return render_template('blog.html', title="Blog", heading=False)
+
 # Other
 @app.route('/cookies')
 def cookies():
