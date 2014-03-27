@@ -1,0 +1,7 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<div id="text">
+	{% if heading %}<h1>{{heading}}</h1>{% endif %}
+	{% block content_text %}{% endblock %}
+</div>
+{% endblock %}

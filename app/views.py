@@ -1,6 +1,7 @@
 from flask import render_template, flash, url_for
 from app import app
 
+# Main pages
 @app.route('/')
 def index():
     return render_template('home.html', title="Home")
@@ -24,3 +25,8 @@ def share():
 @app.route('/media')
 def media():
     return render_template('media.html', title="Media", heading="Media Resources", image_source="1")
+
+# Other
+@app.route('/cookies')
+def cookies():
+    return render_template('cookies.html', title="Cookies", heading="Cookie Information")
