@@ -1,4 +1,4 @@
-from flask import render_template, flash, url_for
+from flask import render_template, url_for, redirect
 from app import app
 
 # Main pages
@@ -30,3 +30,11 @@ def media():
 @app.route('/cookies')
 def cookies():
     return render_template('cookies.html', title="Cookies", heading="Cookie Information")
+    
+@app.route('/donation-thanks')
+def donation_thanks():
+	return render_template('donation-thanks.html', title="Donation", heading="Thanks for your donation!", image_source="4")
+
+@app.route('/donation-cancel')
+def donation_cancel():
+	return redirect(url_for('share'))
