@@ -1,10 +1,11 @@
 from flask import render_template, url_for, redirect
 from app import app
+from datetime import datetime
 
 # Main pages
 @app.route('/')
 def index():
-    return render_template('home.html', title="Home")
+    return render_template('home.html', title="Home", publish=datetime(2014, 03, 28, 12, 00, 00))
 
 @app.route('/making-of')
 def making_of():
