@@ -50,10 +50,6 @@ a:hover {
 	transition: background-color 0.5s;
 }
 
-body.home footer.container {
-	margin-top: -110px;
-}
-
 /* base */
 header {
 	padding-top: 10px;
@@ -240,6 +236,19 @@ footer #hash-tags a {
 	margin-top: 30px;
 }
 /* pages */
+
+.box.full {
+	width: 98.3%;
+	background-color: #f15f5c;
+	color: white;
+	padding: 10px;
+	font-size: 26px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	text-align: center;
+	margin: 34px auto 0px auto;
+}
 
 #youtube img {
 	width: 100%;
