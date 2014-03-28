@@ -238,16 +238,34 @@ footer #hash-tags a {
 /* pages */
 
 .box.full {
+	font-size: 26px;
 	width: 98.3%;
 	background-color: #f15f5c;
 	color: white;
 	padding: 10px;
-	font-size: 26px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	text-align: center;
 	margin: 34px auto 0px auto;
+}
+
+@media(max-width:1200px){
+	.box.full {
+		font-size: 24px;
+	}
+}
+
+@media(max-width:992px){
+	.box.full {
+		font-size: 17px;
+	}
+}
+
+@media(max-width: 768px){
+	.box.full {
+		font-size: 14px;
+	}
 }
 
 #youtube img {
