@@ -2,15 +2,9 @@
 {% block content %}
 	<!-- Time now: {{now()}} -->
 	<div class="row">
-		{% if publish < now() %}
 		<div id="youtube" class="col-md-12 flex-video widescreen">
 			<iframe width="560" height="315" src="//www.youtube.com/embed/h3VATWdrZ30" frameborder="0" allowfullscreen></iframe>
 		</div>
-		{% else %}
-		<div id="youtube" class="col-md-12">
-			<img src="/static/images/home/youtube-placeholder.png" />
-		</div>
-		{% endif %}
 		<div class="col-md-12">
 			<a href="http://www.youngvoters.eu/eu" class="track" target="_blank">
 				<div class="box full">
