@@ -5,7 +5,7 @@ from datetime import datetime
 # Main pages
 @app.route('/')
 def index():
-    return render_template('home.html', title="Home", publish=datetime(2014, 03, 28, 12, 00, 00))
+    return render_template('home.html', title="Video", publish=datetime(2014, 03, 28, 12, 00, 00))
 
 @app.route('/making-of')
 def making_of():

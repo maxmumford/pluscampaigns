@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   	<head>
+  		<!-- Meta data -->
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<title>HappyVoting | {{title}}</title>
+
+		<meta property="og:site_name" content="HappyVoting">
+		<meta property="og:url" content="{{request.url}}">
+		<meta property="og:title" content="Happy Voting | {{title}}">
 
 		<!-- css imports -->
 		<link type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
@@ -25,6 +30,9 @@
 
 		<!-- other -->
 		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+		<!-- template -->
+		{% block head %}{% endblock %}
 
   	</head>
 
