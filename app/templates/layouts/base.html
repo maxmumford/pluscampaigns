@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
   	<head>
   		<!-- Meta data -->
 		<meta charset="utf-8"/>
@@ -7,9 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<title>HappyVoting | {{title}}</title>
 
-		<meta property="og:site_name" content="HappyVoting">
-		<meta property="og:url" content="{{request.url}}">
-		<meta property="og:title" content="Happy Voting | {{title}}">
+		<meta property="og:site_name" content="HappyVoting"/>
+		<meta property="og:url" content="{{request.url}}"/>
+		<meta property="og:title" content="Happy Voting | {{title}}"/>
 
 		<!-- css imports -->
 		<link type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
@@ -36,7 +36,7 @@
 
   	</head>
 
-  	<body{% if title in ['Home', 'The Making Of'] %} class="home"{% endif %}>
+  	<body{% if title in ['Video', 'The Making Of'] %} class="home"{% endif %}>
 
 		<header>
 			<div class="container">
