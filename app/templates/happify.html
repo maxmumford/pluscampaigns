@@ -1,0 +1,34 @@
+{% extends "layouts/text.html" %}
+{% block content_text %}
+	<div id="happify">
+		<h1>Happify My Photo!</h1>
+		<p id="text">
+			Add the HappyVoting watermark to your social media photos to express your support for our cause! 
+		</p>
+		<form action="" method="post" enctype="multipart/form-data">
+      		<p>
+      			<input id="upload" type="file" name="file">
+         		<input id="submit" type="submit" value="Upload">
+         	</p>
+    	</form>
+		{% if image %}
+		<div id="image">
+			<a href="{{image}}"><img src="{{image}}" class="happify" /></a>
+		</div>
+		<p id="download">
+			To download your photo, right click it and choose "Save As"
+		</p>
+		{% endif %}
+	</div>
+
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('#image').mouseover(function(){
+			console.log('doing it');
+			$("#download").stop().css("background-color", "#f5f5f5").animate({ backgroundColor: "#fed30d"}, 1000).animate({ backgroundColor: "#f5f5f5"}, 200);
+		});
+	});
+	</script>
+
+{% endblock %}

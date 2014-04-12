@@ -107,6 +107,7 @@
 							<li {{ menu_active('campaign') | safe }}><a href="/campaign">Your Campaign</a></li>
 							<li {{ menu_active('about') | safe }}><a href="/about">Vote In May</a></li>
 							<li {{ menu_active('take-action') | safe }}><a href="/take-action">Take Action</a></li>
+							<!--<li {{ menu_active('happify') | safe }}><a href="/happify">Happify My Photo!</a></li>-->
 							<li class="separator hidden-xs hidden-sm">|</li>
 							<li {{ menu_active('making-of') | safe }}><a href="/making-of">The Making Of</a></li>
 							<li {{ menu_active('blog') | safe }}><a href="/blog">News & Your Views</a></li>
@@ -121,11 +122,11 @@
 		<main class="container">
 			{% with flashes = get_flashed_messages() %}
 		  		{% if flashes %}
-					<ul class="flashes">
+					<div class="alert alert-danger" style="margin-top: 20px">
 					{% for flash in flashes %}
-				  		<li>{{ flash }}</li>
+				  		<p>{{ flash }}</p>
 					{% endfor %}
-					</ul>
+					</div>
 		  			{% endif %}
 				{% endwith %}
 			{% block content %}{% endblock %}
