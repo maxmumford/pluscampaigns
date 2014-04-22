@@ -1,27 +1,20 @@
-{% extends "layouts/base.html" %}
-{% block head %}
-<meta property="og:type" content="video"/>
-<meta property="og:image" content="http://www.happyvoting.eu/static/images/text/banners/2.jpg"/>
-<meta property="og:description" content="International EU Youth Voting Campaign - https://www.happyvoting.eu https://www.facebook.com/happyvoting https://www.youngvoters.eu"/>
-<meta property="og:video" content="http://www.youtube.com/v/h3VATWdrZ30"/>
-<meta property="og:video:type" content="application/x-shockwave-flash"/>
-<meta property="og:video:width" content="1280"/>
-<meta property="og:video:height" content="720"/>
+{% extends "layouts/text.html" %}
+
+{% block summary %}
+Providing creative communication and audio-visual to governments, non-governmental organisations and corporate clients in political affairs.
 {% endblock %}
 
-{% block content %}
-	<!-- Time now: {{now()}} -->
+{% block content_text %}
 	<div class="row">
-		<div id="youtube" class="col-md-12 flex-video widescreen">
-			<iframe width="560" height="315" src="//www.youtube.com/embed/h3VATWdrZ30" frameborder="0" allowfullscreen></iframe>
-		</div>
 		<div class="col-md-12">
-			<a href="http://www.youngvoters.eu/eu" class="track" target="_blank">
-				<div class="box full">
-					Engage with the League of Young Voters to make young people’s concerns a European priority
-				</div>
-			</a>
-		</div>
+			<p>+ Campaigns offers new and creative solutions for your communication and campaign needs. With the support of our global network we find cost-beneficial and smart ways to design, produce and strategise your campaign, online and offline. We specialise in video campaigns and production, including strategy, editorial advertisement and media diffusion.</p>
 
+			<h3>New tools for communicating</h3>
+
+			<p>Whether you need news broadcasting and editing or videos for YouTube, + Campaigns delivers tailor-made products designed to reach an audience and make an impact.</p>
+
+			<p>Discuss and consult for free with our team members about your plans and needs - <a href="/contact">Contact Us</a></p>
+
+		</div>
 	</div>
 {% endblock %}

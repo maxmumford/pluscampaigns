@@ -5,11 +5,11 @@
 		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>HappyVoting | {{title}}</title>
+		<title>Plus Campaigns | {{title}}</title>
 
-		<meta property="og:site_name" content="HappyVoting"/>
+		<meta property="og:site_name" content="Plus Campaigns"/>
 		<meta property="og:url" content="{{request.url}}"/>
-		<meta property="og:title" content="Happy Voting | {{title}}"/>
+		<meta property="og:title" content="Plus Campaigns | {{title}}"/>
 
 		<!-- css imports -->
 		<link type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
@@ -36,149 +36,69 @@
 
   	</head>
 
-  	<body{% if title in ['Video', 'The Making Of'] %} class="home"{% endif %}>
+  	<body style="background-image: url(/static/images/base/backgrounds/{{ random_background_image() }});">
 
-		<header>
+		<header class="container shadow">
 			<div class="container">
 				<div class="row">
-
-					<div id="like-follow" class="col-md-3">
-						<table>
-							<tr>
-								<td id="like">
-									<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fhappyvoting&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
-								</td>
-								<td id="follow">
-									<a href="https://twitter.com/HappyVoting" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @HappyVoting</a>
-									<script>
-										!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-									</script>
-								</td>
-							</tr>
-						</table>
+					<div class="col-md-3" id="logo">
+						<a href="/">Plus Campaigns</a>
 					</div>
-
-					<div id="title-slogan" class="col-md-6">
-						<p><a id="title" href="/" title="Home Page">Happy Voting</a></p>
-						<p><a id="slogan" class="track" href="https://twitter.com/search?q=%23HappyVoting" target="_new">#VoteInMay</a></p>
+					<div class="col-md-6">
+						<nav>
+							<ul id="minor">
+								<li><a href="/">Home</a></li>
+								<li><a href="/contact">Contact</a></li>
+								<li><a href="/media">Media</a></li>
+								<li><a href="#">Twitter</a></li>
+								<li><a href="#">Facebook</a></li>
+								<li><a href="#">YouTube</a></li>
+							</ul>
+							<ul id="major">
+								<li><a href="/we-are">We Are</a></li>
+								<li><a href="/your-campaign">Your Campaign Services</a></li>
+								<li><a href="/research">We're in Touch</a></li>
+								<li><a href="/contact">Contact Us</a></li>
+							</ul>
+						</nav>
 					</div>
-
-					<div id="share" class="col-md-3">
-						<table>
-							<tr>
-								<td>
-									<a class="track" target="_blank" href="http://www.facebook.com/happyvoting">
-										<img src="/static/images/base/share/icons/facebook.png" />
-									</a>
-								</td>
-								<td>
-									<a class="track" target="_blank" href="https://twitter.com/HappyVoting">
-										<img src="/static/images/base/share/icons/twitter.png" />
-									</a>
-								</td>
-								<td>
-									<a class="track" target="_blank" href="https://plus.google.com/share?url=http://happyvoting.eu">
-										<img src="/static/images/base/share/icons/google-plus.png" />
-									</a>
-								</td>
-								<td>
-									<a class="track" target="_blank" href="https://www.youtube.com/channel/UC5rcB38PoI3uwBtDlPK690A">
-										<img src="/static/images/base/share/icons/youtube.png" />
-									</a>
-								</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-
-			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div class="navbar-collapse collapse in">
-						<ul class="nav navbar-nav">
-							<li {{ menu_active('campaign') | safe }}><a href="/campaign">Your Campaign</a></li>
-							<li {{ menu_active('about') | safe }}><a href="/about">Vote In May</a></li>
-							<li {{ menu_active('take-action') | safe }}><a href="/take-action">Take Action</a></li>
-							<!--<li {{ menu_active('happify') | safe }}><a href="/happify">Happify My Photo!</a></li>-->
-							<li class="separator hidden-xs hidden-sm">|</li>
-							<li {{ menu_active('making-of') | safe }}><a href="/making-of">The Making Of</a></li>
-							<li {{ menu_active('blog') | safe }}><a href="/blog">News & Your Views</a></li>
-							<li {{ menu_active('media') | safe }}><a href="/media">Media</a></li>
-						</ul>
+					<div class="col-md-3">
+						<form action="/search" method="GET">
+							<input type="text" name="q" placeholder="Search Plus Campaigns" />
+						</form>
 					</div>
 				</div>
 			</div>
 
 		</header>
 
-		<main class="container">
-			{% with flashes = get_flashed_messages() %}
-		  		{% if flashes %}
-					<div class="alert alert-danger" style="margin-top: 20px">
-					{% for flash in flashes %}
-				  		<p>{{ flash }}</p>
-					{% endfor %}
-					</div>
-		  			{% endif %}
-				{% endwith %}
+		{% if self.summary() %}
+		<div class="container">
+			<summary>
+				{% block summary %}{% endblock %}
+			</summary>
+		</div>
+		{% endif %}
+
+		<main class="container" id="content">
 			{% block content %}{% endblock %}
 		</main>
 
 		<footer class="container">
-			<div class="row" id="icons">
-				<div class="col-md-3 col-sm-3 col-xs-6 share">
-					<a class="track" target="_blank" href="http://www.facebook.com/happyvoting">
-						<img src="/static/images/base/facebook.png" />
-					</a>
+			<div class="row">
+				<div class="col-md-12">
+					<div id="web-dev-by">Web Development by <a href="http://maxmakedesign.co.uk" target="_blank" class="track">MaxMakeDesign</a></div>
 				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 share">
-					<a class="track" target="_blank" href="https://twitter.com/HappyVoting">
-						<img src="/static/images/base/twitter.png" />
-					</a>
-				</div>
-				<div class="clearfix visible-xs"></div>
-				<div class="col-md-3 col-sm-3 col-xs-6 share">
-					<a class="track" target="_blank" href="https://plus.google.com/share?url=http://happyvoting.eu">
-						<img src="/static/images/base/google-plus.png" />
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 share">
-					<a class="track" target="_blank" href="https://www.youtube.com/channel/UC5rcB38PoI3uwBtDlPK690A">
-						<img src="/static/images/base/youtube.png" />
-					</a>
-				</div>
-			</div>
-			<br style="clear: both" />
-			<div class="row" id="hash-tags">
-				<div class="col-md-2 col-sm-2 col-xs-4 col-md-offset-1 col-sm-offset-1">
-					<a href="https://twitter.com/search?q=%23EvensFoundation" target="_blank">#EvensFoundation</a>
-				</div>
-				<div class="col-md-2 col-sm-2 col-xs-4"><a class="track" href="https://twitter.com/search?q=%23VoteInMay" target="_blank">#VoteInMay</a></div>
-				<div class="col-md-2 col-sm-2 col-xs-4"><a class="track" href="https://twitter.com/search?q=%23EP2014" target="_blank">#EP2014</a></div>
-				<div class="col-md-2 col-sm-2 col-xs-4"><a class="track" href="https://twitter.com/search?q=%23HappyVoting" target="_blank">#HappyVoting</a></div>
-				<div class="col-md-2 col-sm-2 col-xs-4"><a class="track" href="https://twitter.com/search?q=%23YoungVoters" target="_blank">#YoungVoters</a></div>
-			</div>
-			<div class="row" id="web-dev-by">
-				<div class="col-md-12">Web Development by <a href="http://maxmakedesign.co.uk" target="_blank" class="track">MaxMakeDesign</a></div>
 			</div>
 		</footer>
 
 		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-49133771-1', 'happyvoting.eu');
-			ga('send', 'pageview');
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-50262480-1', 'pluscampaign.com');
+		  ga('send', 'pageview');
 		</script>
 
   	</body>
