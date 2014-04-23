@@ -1,8 +1,0 @@
-{% extends "layouts/base.html" %}
-{% block content %}
-<div id="text-full">
-	<img id="banner" src="/static/images/text/banners/{{image_source}}.jpg" />
-	{% if heading %}<h1>{{heading}}</h1>{% endif %}
-	{% block content_text %}{% endblock %}
-</div>
-{% endblock %}
