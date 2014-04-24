@@ -35,6 +35,10 @@ def research():
 def audio_visual():
     return render_template('audio-visual.html', title="Audio Visual", heading="Audio Visual")
 
+@app.route('/videos')
+def videos():
+    return render_template('videos.html', title="Videos", heading="Videos")
+
 @app.route('/social-media')
 def social_media():
     return render_template('social-media.html', title="Social Media", heading="Social Media")
