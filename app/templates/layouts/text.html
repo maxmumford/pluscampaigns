@@ -1,7 +1,17 @@
 {% extends "layouts/base.html" %}
 {% block content %}
-<div id="text">
-	{% if heading %}<h1>{{heading}}</h1>{% endif %}
-	{% block content_text %}{% endblock %}
-</div>
+<div class="row">
+	<div id="side-menu" class="col-md-3">
+		<div class="list-group">
+		    <a href="/audio-visual" class="list-group-item">Audio Visual</a>
+		    <a href="/media" class="list-group-item">Media Diffusion</a>
+		    <a href="/social-media" class="list-group-item">Social Media</a>
+		    <a href="/events" class="list-group-item">Events & Organisation</a>
+		    <a href="/editorial" class="list-group-item">Editorial & New Content</a>
+		</div>
+	</div>
+	<div id="text" class="col-md-9">
+		{% if heading %}<h1 class="no-top">{{heading}}</h1>{% endif %}
+		{% block content_text %}{% endblock %}
+	</div>
 {% endblock %}
